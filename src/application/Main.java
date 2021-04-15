@@ -19,10 +19,10 @@ import java.io.File;
 
             // Définir le modele
             PenseBete chosesAfaires = new PenseBete();
-            // Définir le controller
-            Controleur controller = new Controleur(chosesAfaires);
             // Définir la vue
-            PenseBeteView editeurPenseBete = new PenseBeteView(controller, chosesAfaires);
+            PenseBeteView editeurPenseBete = new PenseBeteView(chosesAfaires);
+            // Définir le controller
+            new Controleur(chosesAfaires, editeurPenseBete);
 
             stage.setTitle("Pense bête Alexis");
             stage.setScene(new Scene(PenseBeteView.asParent(), 500, 350));
